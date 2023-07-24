@@ -7,18 +7,48 @@
     <link rel="stylesheet" href="style.css">
     
 </head>
-<body>
-  <h2>Create Username</h2>
+<body class="signup">
+  <div class='back'></div>
+  <header>
+    <div class="sen"><h1> SeN</h1><img src="icon.avif" alt="Parcel Tracking App"></div>
+    <nav>
+      <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul> 
+
+      <div class="menu-icon">&#9776;</div> <!-- Hamburger menu icon -->
+     
+    </nav>
+   
+  </header>
+  <div class="menu-items">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Features</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+ 
+  <main>
+  
   <form id="usernameForm">
+    <h2 id="signuphead">Create Username and password</h2>
+  <span id="usernamee">
     <label for="username">Username:</label>
-    <input type="text" id="username" required><br>
-
+    <input type="text" id="username" required autocomplete="off"><br>
+  </span>
+  <span id='passwordd'>
     <label for="password">Password:</label>
-    <input type="password" id="password" required><br>
-    <input type="checkbox" name="checkbox" id="showPasswordToggle">
-    <input type="submit" value="Create Account">
+    <input type="password" id="password" required autocomplete="off">
+    <span><input type="checkbox" name="checkbox" id="showPasswordToggle" >show password</span>
+  </span>
+  <input type="submit" value="Create Account" class="btn-primary">
   </form>
-
+  </main>
   
 
   <script src="createUsername.js"></script>

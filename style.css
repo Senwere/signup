@@ -1,60 +1,254 @@
-      
-body {
+  /* Basic CSS styles for responsiveness */
+  *{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+   background-image: url('track.avif');
+   background-size:100vw 120vh;
+   
+  }
+
+  header {
+    background-color: #164B60;
+    color: #fff;
+    padding: 10px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    background-image: url('abstract-blue.jpg');
-    background-size: cover;
-    background-position: center;
+    justify-content: space-between;
   }
-  #container{
-    /* background-color: black; */
+
+  header img {
+    max-height: 50px;
+    margin-right: 10px;
+    border-radius: 0 30px;
+  }
+
+  header .sen{
+    outline: 2px solid #A2FF86;
     display: flex;
-    flex-direction: column;
     align-items: center;
-   width: 90vw;
-   /* background-color: rgb(186, 7, 7); */
+    padding: 0;
+    border-radius: 0 30px;
+    background-color: #4FC0D0;
   }
-  p a{
-    color: rgb(249, 246, 245);
-  }
-  p a:hover{
-    color: rgb(93, 242, 7);
-    font-size: large;
-  }
-  
-  #loginForm ,#signupForm {
+
+
+  nav {
     display: flex;
-    flex-direction: column;
-    /* margin-top: 100px; */
-    width:70vb;
-    background-color: white;
-    padding: 20px;
+    justify-content: flex-end;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  nav li {
+    margin: 0 10px;
+  }
+  input{
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 25px;
+   } 
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-style: italic;
   }
-  h2{
-    color: white;
+  section {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
   }
+
+  .menu-icon {
+    display: none;
+    /* Initially hide the menu icon on larger screens */
+  }
+
+.back {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  height: 100vh;
+  background-image: url(background.gif);
+  background-repeat: no-repeat;
+  filter: grayscale(100%) opacity(.3);
+  z-index: -20;
+}
+
+  /* Mobile-first responsive layout */
+  @media (max-width: 768px) {
+    header {
+      justify-content: space-between;
+    }
+
+   
+
+    .menu-icon {
+      display: block;
+      /* Show the menu icon on smaller screens */
+      cursor: pointer;
+      font-size:x-large;
+      color: #A2FF86;
+    }
+
+    .menu-items {
+      background-color: #4FC0D0;
+      display: none;
+      /* Initially hide the menu items */
+      flex-direction: column;
+      /* Change the background color to blue */
+      align-items: center;
+      width: 100vw;
+    }
+
+    .menu-items ul{
+      text-decoration: none;
+      margin-bottom: 5px;
+      list-style-type: none;
+      font-size: x-large;
+      line-height: 40px;
+      padding:0 20px;
+      margin-top: 0;
+     
+      /* list-style: none; */
+    }
+    .menu-items a{
+      text-decoration: none;
+      color: #ffffff;
+    }
+    /* Show the menu items when the hamburger icon is clicked */
+    .menu-icon.clicked+.menu-items {
+      display: flex;
+    }
+    nav .menu {
+      display: none;
+      /* Hide the nav menu on smaller screens */
+    }
+  }
+
+  /* Styles specific to large screens */
+  @media (min-width: 769px) {
+    .menu-icon {
+      display: none;
+      /* Hide the menu icon on larger screens */
+    }
+
+    nav li {
+      display: inline-block;
+      /* Display list items in one row */
+      margin: 0 20px;
+      /* Add space between the icon and list items */
+    }
+
+    nav ul {
+      list-style-type: none;
+      /* Remove bullet points from list */
+    }
+    .menu-items{
+      display: none;
+    }
+    .menu li a{
+      color: #A2FF86;
+    }
+  }
+     #loginForm,
+     #signupForm,#usernameForm {
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       /* Align content vertically */
+       align-items: center;
+       /* Align content horizontally */
+       margin: 100px auto;
+
+       /* Center the form horizontally with top margin */
+       background-color: #4FC0D0;
+       padding: 30px;
+       border-radius: 10px;
+       /* Smaller radius for a more subtle effect */
+       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+       /* Lighter shadow */
+     }
   
-  h1 {
-    text-align: center;
-    color: #333;
-  }
+     #loginForm,
+     #signupForm,#usernameForm {
+       margin-top: 30px;
+       width: 40vw;
+        height: 350px;
+        justify-content: space-between;
+       min-width: 200px;
+       max-width: 300px;
+       /* Added max-width for responsiveness */
+     }
   
-  #loginForm,#signupForm {
-    margin-top: 30px;
-  }
+     .btn-primary {
+      margin-top: 10px;
+       align-self: center;
+       width: 50%;
+       height: 40px;
+       padding: 10px;
+       /* Added padding for better button appearance */
+       background-color: #A2FF86;
+       /* Changed button background color */
+       border: none;
+       color: #fff;
+       /* Changed button text color */
+       font-weight: bold;
+       border-radius: 5px;
+       cursor: pointer;
+       transition: background-color 0.3s ease-in-out;
+       /* Added button hover transition */
+     }
   
-  .form-group label {
-    font-weight: bold;
-  }
+     .btn-primary:hover {
+       background-color: #6DE020;
+       /* Updated button hover color */
+     }
   
-  .alert {
-    margin-top: 10px;
-  }
+     #signuphead {
+      text-transform: uppercase;
+      text-align: center;
+       color: #164B60;
+       font-size: 24px;
+       font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+       /* Increased heading font size */
+       margin-bottom: 15px;
+       /* Added bottom margin below the heading */
+     }
   
-  .btn-primary {
-    align-self: center;
-    width: 50%;
-  }
+     #account {
+      text-align: center;
+       color:#fff;
+       margin-top:20px;
+       font-weight: 500;
+       /* Added top margin below the button */
+     }
+     #fname,#usernamee,#password{
+      display: flex;
+      flex-direction: column;
+     }
+  
+     #mail{
+      display: flex;
+      flex-direction: column;
+     }
+     #mail input{
+      border-radius: 5px;
+      height: 25px;
+     }
+     #gender{
+      display: flex;
+      margin: 5px 0;
+     }
+     #passwordd span{
+      display: flex;
+      align-items: center;
+     }
