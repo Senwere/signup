@@ -64,6 +64,19 @@
     overflow: hidden;
     height: 100vh;
   }
+  h3{
+    background-color: #74048389;
+    color: #4FC0D0;
+   -webkit-text-stroke:1px #fafbf9;
+    font-weight: 900;
+    position: relative;
+    top: 15px;
+    max-width: 265px;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+  }
 
   .menu-icon {
     display: none;
