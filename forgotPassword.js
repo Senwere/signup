@@ -28,7 +28,7 @@ document.getElementById('resetPasswordForm').addEventListener('submit', function
       localStorage.setItem('users', JSON.stringify(users));
 
       // Display a success message to the user
-      alert('Your password has been reset successfully.');
+      alert(`Your password has been reset successfully,your new password is ${newPassword}`);
 
       // Redirect to login page
       window.location.href = 'login.html';

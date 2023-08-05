@@ -2,6 +2,31 @@ const usee = document.getElementById('usee');
 const names = document.getElementById('nxt');
 const nextSection = document.getElementById('nextsection');
 
+
+document.onreadystatechange = function() {
+  if (document.readyState === 'interactive') {
+
+  
+
+    function showSpinner() {
+      document.getElementById('spinnerContainer').style.visibility = 'visible';
+      // document.getElementById('back').style.display = 'none';
+      document.querySelector('.loginForm').style.visibility = 'hidden';
+    }
+
+    function hideSpinner() {
+      // document.getElementById('back').style.display = 'block';
+    
+      document.querySelector('.loginForm').style.visibility = 'visible';
+      document.getElementById('spinnerContainer').style.visibility = 'hidden';
+    }
+
+    showSpinner(); // Show the spinner on load
+    setTimeout(function() {
+      hideSpinner(); // Hide the spinner after five seconds
+    }, 5000); // 5000 milliseconds = 5 seconds
+  }
+};
 // Hide all sections except the first one
 const sections = document.querySelectorAll('section');
 sections.forEach((section, index) => {
@@ -74,7 +99,7 @@ showPasswordToggle.addEventListener('change', function() {
 });
 
 // Function to handle form submission
-document.getElementById('loginForm').addEventListener('submit', function(event) {
+document.querySelector('.loginForm').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent form from submitting
 
   // Get form values

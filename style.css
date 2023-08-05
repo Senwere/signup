@@ -2,6 +2,8 @@
   *{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
+
+
   body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -10,14 +12,21 @@
    background-size:100vw 120vh;
    
   }
+  header .sen h1{
+    display: flex;
+    color: rgb(3, 144, 144);
+    margin-left: 10px;
+   
+  }
 
   header {
     background-color: #164B60;
-    color: #fff;
+    /* color: #fff; */
     padding: 10px;
-    display: flex;
+    height:100px;
+    /* display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; */
   }
 
   header img {
@@ -30,14 +39,26 @@
     outline: 2px solid #A2FF86;
     display: flex;
     align-items: center;
+    /* gap: 30%; */
     padding: 0;
     border-radius: 0 30px;
     background-color: #4FC0D0;
+    -webkit-text-stroke:1px blue;
   }
-
+  header span{
+    outline: 2px solid #164B60;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border-radius: 0 30px;
+    background-color: #4FC0D0;
+    -webkit-text-stroke:1px blue;
+  }
+ 
 
   nav {
     display: flex;
+    margin-top: -50px;
     justify-content: flex-end;
     list-style-type: none;
     padding: 0;
@@ -64,6 +85,40 @@
     overflow: hidden;
     height: 100vh;
   }
+  /* Add this to your CSS file or inside a <style> tag in the <head> section of your HTML */
+
+.spinner-container {
+/* background-color: #164B60; */
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 7px solid rgb(218, 19, 19);
+  border-top: 7px solid #3498db; /* Adjust the color to your preference */
+  border-radius: 50%;
+  animation: spin 2s linear infinite; /* Add a spinning animation */
+}
+.spinner {
+  background-color: #6DE020;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+@keyframes spin {
+  0% {
+    transform:translateY(0);
+  }
+  100% {
+    transform: translateY(30px);
+  }
+}
+
   h3{
     background-color: #74048389;
     color: #4FC0D0;
@@ -77,12 +132,62 @@
     transform: translate(-50%, -50%);
     
   }
+  .indexmain button{
+    height: 20vh;
+    border: none;
+    color: #080808;
+    background:linear-gradient(to right, #fafbf9, #4FC0D0);
+    font-weight: 900;
+    width:100%;
+    border-radius: 40px;
+    animation: bbt infinite ease-in-out 4s;
+  
+    
+  }
+  .indexmain button:hover{
+    animation: none;
+    font-size:larger;
+    text-transform: uppercase;
+  }
+    .indexmain ul {
+      /* background-color: #4FC0D0; */
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      cursor: default;
+      width: 50vw;
+    }
+    .indexmain button{
+      /* margin: 100%; */
+      cursor: pointer;
+      
+    }
+    .indexmain a{
+      cursor: default;
+      text-decoration: none;
+    }
 
   .menu-icon {
     display: none;
     /* Initially hide the menu icon on larger screens */
   }
-
+  .password-input-wrapper span{
+    display: flex;
+    align-items: center;
+    margin-top:-7px;
+  }
+  #gender{
+    display: flex;
+    align-items: center;
+  }
+  #gender span{
+    display: flex;
+    align-items: center;
+  }
 .back {
   position: absolute;
   top: 60%;
@@ -93,7 +198,25 @@
   background-image: url(background.gif);
   background-repeat: no-repeat;
   filter: grayscale(100%) opacity(.3);
-  z-index: -20;
+ z-index: -2;
+}
+/* .mainA {
+  display: flex;
+  align-content:center ;
+  color:#080808
+} */
+@keyframes bbt {
+  0%{
+    zoom: 1.3;
+    filter: hue-rotate(360deg);
+  }
+  100%{
+    zoom:1.5;
+  /* -webkit-text-stroke: 1px #bec9bb; */
+    background:linear-gradient(to left, #ffffff9a, #4fc1d0a9);
+  }
+
+  
 }
 
   /* Mobile-first responsive layout */
@@ -102,7 +225,18 @@
       justify-content: space-between;
     }
 
-   
+    .back {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70vw;
+      height: 100vh;
+      background-image: url(background.gif);
+      background-repeat: no-repeat;
+      filter: grayscale(100%) opacity(.3);
+     z-index: -2;
+    }
 
     .menu-icon {
       display: block;
@@ -120,6 +254,8 @@
       /* Change the background color to blue */
       align-items: center;
       width: 100vw;
+      z-index: 200;
+      margin-top: -24px;
     }
 
     .menu-items ul{
@@ -129,7 +265,7 @@
       font-size: x-large;
       line-height: 40px;
       padding:0 20px;
-      margin-top: 0;
+      margin-top:0px;
      
       /* list-style: none; */
     }
@@ -157,7 +293,8 @@
     nav li {
       display: inline-block;
       /* Display list items in one row */
-      margin: 0 20px;
+      margin: 0 10px;
+     
       /* Add space between the icon and list items */
     }
 
@@ -167,13 +304,21 @@
     }
     .menu-items{
       display: none;
+    
     }
     .menu li a{
-      color: #A2FF86;
+      color: #081405;
+      text-decoration: none;
+    }
+    .menu{
+      display: flex;
+      justify-content: flex-end;
     }
   }
-     #loginForm,
-     #signupForm,#usernameForm,.tracking-page{
+    
+     .loginForm,#resetPasswordForm, 
+     #signupForm,#usernameForm,
+     .tracking-form{
        display: flex;
        flex-direction: column;
        justify-content: center;
@@ -183,17 +328,14 @@
        margin: 100px auto;
 
        /* Center the form horizontally with top margin */
-       background-color: #4FC0D0 ;
+       background-color: #4fc1d0a9 ;
        color: #fff;
        padding: 30px;
        border-radius: 10px;
        /* Smaller radius for a more subtle effect */
        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
        /* Lighter shadow */
-     }
-  
-     #loginForm,
-     #signupForm,#usernameForm,.tracking-page{
+    
        margin-top: 30px;
        width: 40vw;
         height: 350px;
@@ -202,15 +344,15 @@
        max-width: 300px;
        /* Added max-width for responsiveness */
      }
-  
-     .btn-primary {
+
+     .btn-primary,.tracking-button{
       margin-top: 10px;
        align-self: center;
        width: 50%;
        height: 40px;
        padding: 10px;
        /* Added padding for better button appearance */
-       background-color: #A2FF86;
+       background-color: #1c6f03;
        /* Changed button background color */
        border: none;
        color: #fff;
@@ -226,8 +368,12 @@
        background-color: #6DE020;
        /* Updated button hover color */
      }
+     .tracking-button:hover{
+      background-color: #6DE020;
+    }
+     
   
-     #signuphead {
+     #signuphead,.tracking-heading {
       text-transform: uppercase;
       text-align: center;
        color: #164B60;

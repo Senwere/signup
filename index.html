@@ -6,15 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Parcel Tracking App</title>
   <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="bootstrap-5.3.0-dist/css/bootstrap.min.css"> -->
 </head>
 
 <body>
-<div class='back'></div>
+ 
+<div class='back' id="back"></div>
   <header>
-    <div class="sen"><h1> SeN</h1><img src="icon.avif" alt="Parcel Tracking App"></div>
-    <div>
-      <h1>Track Your Parcels</h1>
-    </div>
+ 
+    <div class="sen"><span><h1> SeN</h1><img src="icon.avif" alt="Parcel Tracking App"></span>
+      <h1>Parcel Tracking Site</h1></div>
     <nav>
       <ul class="menu">
         <li><a href="#">Home</a></li>
@@ -22,6 +23,8 @@
         <li><a href="#">Features</a></li>
         <li><a href="#">Contact</a></li>
       </ul> 
+       
+    
 
       <div class="menu-icon">&#9776;</div> <!-- Hamburger menu icon -->
      
@@ -36,18 +39,59 @@
     </ul>
   </div>
 
-  <main>
-    <h3>RECOMENDABLE PARCEL TRACKING SITE</h3>
+  <main class="indexmain">
+
+    <div class="spinner-container" id="spinnerContainer">
+      <div class="spinner"><h2>SeN</h2></div>
+    </div>
+
+
     <ul>
-      <a href="login.html"><button>Sign in</button></a>
-      <a href="signup.html"><button>sign up</button></a>
+     
+      <a href="login.html"><button class="bbt">Sign in</button></a>
+
+      <a href="signup.html"><button class="bbt">sign up</button></a>
+    </span>
     </ul>
   </main>
+  <script>
 
+
+    </script>
  
   <footer>© 2023 U Simeon E </footer>
+
   <script src="script.js" >
-    </script>
+  </script>
+  <script>
+document.onreadystatechange = function() {
+  if (document.readyState === 'interactive') {
+    let bbt = document.querySelectorAll('.bbt');
+
+   
+    function showSpinner() {
+      document.getElementById('spinnerContainer').style.display = 'block';
+      document.getElementById('back').style.display = 'none';
+      bbt.forEach(button => button.style.display = 'none');
+      
+
+    }
+
+    function hideSpinner() {
+      document.getElementById('back').style.display = 'block';
+      document.getElementById('spinnerContainer').style.display = 'none';
+      bbt.forEach(button => button.style.display = 'block');
+
+    }
+
+    showSpinner(); // Show the spinner on load
+    setTimeout(function() {
+      hideSpinner(); // Hide the spinner after five seconds
+    }, 5000); // 5000 milliseconds = 5 seconds
+  }
+};
+  </script>
+
 </body>
 
 </html>

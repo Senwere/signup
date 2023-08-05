@@ -1,3 +1,7 @@
+
+
+
+
 // for index page
 const menuIcon = document.querySelector(".menu-icon");
 const menuItems = document.querySelector(".menu-items");
@@ -37,6 +41,8 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
   // Redirect to username and password creation page, passing user index as parameter
   window.location.href = 'createUsername.html?userIndex=' + (users.length - 1);
 });
+
+
 
 
 // var countryCodeSelect = document.getElementById('countryCode');

@@ -37,7 +37,11 @@
   </div>
  
   <main>
-    <div id="signup">
+    <div class="spinner-container" id="spinnerContainer">
+      <div class="spinner"><h2>SeN</h2></div>
+    </div>
+
+    <div>
       <form id="signupForm">
       <h1 id="signuphead">Sign Up</h1>
    
@@ -48,10 +52,12 @@
   
       <div id="gender">
       <label for="gender">Gender:</label>
+      <span>
       <input type="radio" id="male" name="gender" value="Male" required>
       <label for="male">Male</label>
       <input type="radio" id="female" name="gender" value="Female" required>
       <label for="female">Female</label>
+    </span>
     </div>
       <span id="mail">
       <label for="email">Email:</label>
@@ -64,11 +70,32 @@
     
   </div>
   </main>
-
  
- 
-
-
   <script src="script.js"></script>
+  <script>
+    document.onreadystatechange = function() {
+  if (document.readyState === 'interactive') {
+
+
+
+    function showSpinner() {
+      document.getElementById('spinnerContainer').style.display = 'block';
+      document.querySelector('.back').style.display = 'none';
+      document.getElementById('signupForm').style.display = 'none';
+    }
+
+    function hideSpinner() {
+      document.querySelector('.back').style.display = 'block';
+      document.getElementById('spinnerContainer').style.display = 'none';
+      document.getElementById('signupForm').style.display = 'block';
+    }
+
+    showSpinner(); // Show the spinner on load
+    setTimeout(function() {
+      hideSpinner(); // Hide the spinner after five seconds
+    }, 5000); // 5000 milliseconds = 5 seconds
+  }
+};
+  </script>
 </body>
 </html>
